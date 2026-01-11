@@ -40,7 +40,7 @@ No sugarcoating.
         html_output = markdown.markdown(raw_text)
     return render_template("index.html", result=html_output)
 
-
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000)
+
 

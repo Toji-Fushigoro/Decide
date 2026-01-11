@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request
 from dotenv import load_dotenv
 import os
-import google.generativeai as genai
 import markdown
 
 
@@ -30,16 +29,15 @@ Break down each option honestly and roast bad decisions.
 No sugarcoating.
 """
 
-        client = genai.Client()
-        response = client.models.generate_content(
-            model="gemini-3-flash-preview",
-            contents=prompt
-        )
+        
+        import google.generativeai as genai
+        genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
+        response = genai.generate_text(model="gemini-3-flash-preview", prompt=prompt)
         raw_text = response.text
         html_output = markdown.markdown(raw_text)
-    return render_template("index.html", result=html_output)
 
+    return render_template("index.html", result=html_output)
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
 

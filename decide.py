@@ -30,14 +30,20 @@ No sugarcoating.
 """
 
         
+       
         import google.generativeai as genai
         genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
-        response = genai.generate_text(model="gemini-3-flash-preview", prompt=prompt)
+        response = genai.models.generate_content(
+            model="gemini-3-flash-preview",
+            contents=prompt
+        )
+
         raw_text = response.text
         html_output = markdown.markdown(raw_text)
 
-    return render_template("index.html", result=html_output)
+        return render_template("index.html", result=html_output)
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
 

@@ -1,0 +1,103 @@
+/* Base Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body */
+body {
+    font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+    background-color: #0f172a;
+    color: #e5e7eb;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container (Swiss Grid Feel) */
+.container {
+    width: 100%;
+    max-width: 720px;
+    padding: 48px;
+}
+
+/* Header */
+header {
+    margin-bottom: 32px;
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+}
+
+.subtitle {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+/* Form */
+form {
+    margin-bottom: 32px;
+}
+
+textarea {
+    width: 100%;
+    min-height: 140px;
+    background: transparent;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    padding: 14px;
+    color: #e5e7eb;
+    font-size: 1rem;
+    resize: vertical;
+}
+
+textarea::placeholder {
+    color: #64748b;
+}
+
+/* Button */
+button {
+    margin-top: 16px;
+    background: transparent;
+    border: 1px solid #e5e7eb;
+    color: #e5e7eb;
+    padding: 10px 28px;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background: #e5e7eb;
+    color: #0f172a;
+}
+
+/* Output */
+.output {
+    border-left: 2px solid #e5e7eb;
+    padding-left: 20px;
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+/* Markdown polish */
+.output h3 {
+    margin-top: 24px;
+    font-weight: 500;
+}
+
+.output ul {
+    margin-left: 18px;
+}
+
+.output strong {
+    color: #facc15;
+}
+

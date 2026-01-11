@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Decide</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Decision Maker</h1>
+        <p class="subtitle">Type your dilemma. Get reality.</p>
+    </header>
+
+    <form method="POST">
+        <textarea name="user_message" placeholder="Water vs Soda? Career vs Comfort?" required></textarea>
+        <button type="submit">Decide</button>
+    </form>
+
+    {% if result %}
+        <section class="output">
+            {{ result | safe }}
+        </section>
+    {% endif %}
+</div>
+
+</body>
+</html>
+
